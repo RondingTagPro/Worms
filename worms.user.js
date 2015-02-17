@@ -9,7 +9,7 @@
 // @include       http://maptest.newcompte.fr/*
 // @include       http://maptest.newcompte.fr:*
 // @author        Ronding
-// @version       0.1
+// @version       1.0
 // ==/UserScript==
 
 (function(){
