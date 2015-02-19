@@ -9,7 +9,7 @@
 // @include       http://maptest.newcompte.fr/*
 // @include       http://maptest.newcompte.fr:*
 // @author        Ronding
-// @version       1.0
+// @version       1.1
 // ==/UserScript==
 
 (function(){
@@ -215,12 +215,12 @@ else
      else if(alive != alive) { play(['yessir','jump1','jump2']); alive = 0; }
      else if(!lastFlag && flag) play(['watchthis','fire','orders']);
      else if(nearby[2]) play(firstblood ? ['firstblood'] : ['fatality','laugh','dragonpunch','fireball']);
-     else if(nearby[3]) play(firstblood ? ['firstblood'] : ['oops','oinutter']);
+     else if(nearby[3]) play(['oops','oinutter']);
      else if(~lastPups & pups) play(['collect','drop']);
      else if(speed - Math.max(lastSpeed, lastLastSpeed) > 10 && speed > 20) play(['incoming','takecover','takeover','grenade','runaway','wobble','bungee']);
      else if(speed - Math.min(lastSpeed, lastLastSpeed) < -5 && speed < 10) play(nearby[0] ? ['ow1','ow2','ow3'] : ['ooff1','ooff2','ooff3','oof1','oof2','oof3']);
      else if(hurry && theirScore >= ourScore && tagpro.gameEndsAt - Date.now() < 60000) hurry = !play(['hurry']);
-     if(nearby[2]) firstblood = false;
+     if(nearby[2] || nearby[3]) firstblood = false;
      alive++;
      lastX = player.x, lastY = player.y, lastLastSpeed = lastSpeed, lastSpeed = speed;
     }
